@@ -1,6 +1,6 @@
-# Playmena Legal
+# PlayMENA Legal
 
-Static site hosting Playmena's **Privacy Policy** and **Terms & Conditions**, served via GitHub Pages.
+Static site hosting PlayMENA's **Privacy Policy** and **Terms & Conditions**, served via GitHub Pages.
 
 ## Structure
 
