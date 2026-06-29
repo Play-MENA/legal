@@ -1,8 +1,13 @@
-# PlayMENA Legal
+# PlayMENA Legal & Developer Site
 
-Static site hosting PlayMENA's legal pages — **Privacy Policy**, **Terms &
-Conditions**, and **Data Deletion** — served via GitHub Pages. Covers our
-hyper-casual mobile games (currently **Hexa Puzzle**).
+Static site for PlayMENA, served via GitHub Pages from the organization root
+(`play-mena.github.io`). Hosts our legal pages — **Privacy Policy**, **Terms &
+Conditions**, **Data Deletion** — and the **app-ads.txt** file for AdMob.
+Covers our hyper-casual mobile games (currently **Hexa Puzzle**).
+
+> **Repo name matters:** this repo must be named **`play-mena.github.io`** so the
+> site serves at the domain root. That root is required for `app-ads.txt` to be
+> found, and gives the legal pages clean URLs.
 
 ## Structure
 
@@ -12,38 +17,55 @@ hyper-casual mobile games (currently **Hexa Puzzle**).
 | `privacy.html` | Privacy Policy |
 | `terms.html` | Terms & Conditions |
 | `delete-data.html` | Data deletion request page (Google Play + Facebook requirement) |
+| `app-ads.txt` | AdMob authorized-sellers file (must sit at the domain root) |
 | `styles.css` | Shared styles for all pages |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is (no Jekyll build) |
 
-The current details (PlayMENA, Jordan, contact `playmena.labs@gmail.com`, min
-age 13) are already filled in. Update the `Last updated` date when you change
-content.
+Details (PlayMENA, Jordan, contact `playmena.labs@gmail.com`, min age 13) are
+already filled in. Update the `Last updated` date when you change content.
 
-> ⚠️ These documents are a practical starting point, not legal advice. Have them
-> reviewed by qualified legal counsel before relying on them.
+> ⚠️ The legal documents are a practical starting point, not legal advice. Have
+> them reviewed by qualified legal counsel before relying on them.
 
 ## Live URLs (once Pages is enabled)
 
-- Legal Center: `https://play-mena.github.io/legal/`
-- Privacy Policy: `https://play-mena.github.io/legal/privacy.html`
-- Terms & Conditions: `https://play-mena.github.io/legal/terms.html`
-- Data Deletion: `https://play-mena.github.io/legal/delete-data.html`
+- Legal Center: `https://play-mena.github.io/`
+- Privacy Policy: `https://play-mena.github.io/privacy.html`
+- Terms & Conditions: `https://play-mena.github.io/terms.html`
+- Data Deletion: `https://play-mena.github.io/delete-data.html`
+- app-ads.txt: `https://play-mena.github.io/app-ads.txt`
 
 ## Enable GitHub Pages
 
 1. Go to **Settings → Pages**.
 2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
 3. Select branch `main` and folder `/ (root)`, then **Save**.
-4. After a minute, the site is live at `https://play-mena.github.io/legal/`.
+4. After a minute, the site is live at `https://play-mena.github.io/`.
+
+## app-ads.txt (AdMob)
+
+`app-ads.txt` authorizes who may sell your ad inventory and must live at the
+**root** of the developer website listed on your store pages.
+
+1. The file already contains your AdMob line:
+   `google.com, pub-9780554709620172, DIRECT, f08c47fec0942fa0`
+   (add a new line for each additional ad network you integrate).
+2. In **Google Play Console** and **App Store Connect**, set the app's
+   **website / developer URL** to `https://play-mena.github.io` so AdMob checks
+   the right domain.
+3. Verify it loads at `https://play-mena.github.io/app-ads.txt`.
+4. Wait up to ~24 hours, then check status in **AdMob → app-ads.txt**.
 
 ## Where to paste these URLs
 
 | Console | Field | URL |
 | --- | --- | --- |
-| Google Play Console | App content → Privacy policy | `.../legal/privacy.html` |
-| Google Play Console | App content → **Data deletion** | `.../legal/delete-data.html` |
-| Apple App Store Connect | App Privacy → Privacy Policy URL | `.../legal/privacy.html` |
-| Facebook Developer Console | App → Settings → **Data Deletion Instructions URL** | `.../legal/delete-data.html` |
+| Google Play Console | App content → Privacy policy | `https://play-mena.github.io/privacy.html` |
+| Google Play Console | App content → **Data deletion** | `https://play-mena.github.io/delete-data.html` |
+| Google Play Console | Store listing → **Website** | `https://play-mena.github.io` |
+| Apple App Store Connect | App Privacy → Privacy Policy URL | `https://play-mena.github.io/privacy.html` |
+| Facebook Developer Console | App → Settings → **Data Deletion Instructions URL** | `https://play-mena.github.io/delete-data.html` |
+| AdMob | app-ads.txt (root of developer site) | `https://play-mena.github.io/app-ads.txt` |
 
 ## Google Play "Data Safety" cheat-sheet
 
