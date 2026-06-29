@@ -64,8 +64,16 @@ already filled in. Update the `Last updated` date when you change content.
 | Google Play Console | App content → **Data deletion** | `https://play-mena.github.io/delete-data.html` |
 | Google Play Console | Store listing → **Website** | `https://play-mena.github.io` |
 | Apple App Store Connect | App Privacy → Privacy Policy URL | `https://play-mena.github.io/privacy.html` |
+| Apple App Store Connect | App Information → **Marketing URL** | `https://play-mena.github.io` |
+| Apple App Store Connect | App Information → **Support URL** (required) | `https://play-mena.github.io` |
 | Facebook Developer Console | App → Settings → **Data Deletion Instructions URL** | `https://play-mena.github.io/delete-data.html` |
 | AdMob | app-ads.txt (root of developer site) | `https://play-mena.github.io/app-ads.txt` |
+
+> **One `app-ads.txt`, two stores.** The single file at the domain root covers
+> both Android and iOS. AdMob finds it via the **Website** (Google Play) and the
+> **Marketing/Support URL** (App Store) — so both must use the
+> `play-mena.github.io` domain. Verification only happens once an app is live (or
+> in review) with these URLs set.
 
 ## Google Play "Data Safety" cheat-sheet
 
